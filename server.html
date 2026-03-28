@@ -48,9 +48,7 @@ This Website was developed by AKW42 for Blockattack. gmrrh is and will be a Copy
                         <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
                     </a>
                 </li>
-                </li>
-                <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server
-                        Info</a></li>
+                <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server Info</a></li>
                 <li><a href="/news.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Neuigkeiten</a></li>
             </ul>
         </nav>
@@ -61,7 +59,6 @@ This Website was developed by AKW42 for Blockattack. gmrrh is and will be a Copy
             </button>
         </div>
     </header>
-
 
     <section id="server">
         <h2>Server Info</h2>
@@ -74,14 +71,16 @@ This Website was developed by AKW42 for Blockattack. gmrrh is and will be a Copy
             <li>Events und regelmäßige Updates</li>
         </ul>
     </section>
+
     <section>
         <script>
-    function credits() {
-        window.location.href = "/static/credits.txt";
-    }
+            function credits() {
+                window.location.href = "/static/credits.txt";
+            }
         </script>
-        <button style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;" onclick="credits()">Website Credits</a>
+        <button style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;" onclick="credits()">Website Credits</button>
     </section>
+
     <section id="server-status">
         <h2>Server Status</h2>
         <div id="status-message">Lade Serverstatus...</div>
@@ -97,7 +96,6 @@ This Website was developed by AKW42 for Blockattack. gmrrh is and will be a Copy
 
     <script>
         const serverAddress = 'blockattack.fun';
-
         const apiUrl = `https://api.mcstatus.io/v2/status/java/${serverAddress}`;
 
         fetch(apiUrl)
@@ -116,7 +114,12 @@ This Website was developed by AKW42 for Blockattack. gmrrh is and will be a Copy
                     statusMessageElement.classList.add("online");
 
                     document.getElementById('players-online').innerHTML = `<span><strong>Spielerzahl:</strong> ${data.players.online} / ${data.players.max}</span>`;
-                    document.getElementById('motd').innerHTML = `<span><strong>MOTD:</strong> ${data.motd.clean}</span>`;
+
+                    // ✅ HIER IST DER EINZIGE FIX
+                    const motdText = data.motd.clean;
+                    const safeText = motdText.replace(/<[^>]*>/g, "");
+                    document.getElementById('motd').innerHTML = `<span><strong>MOTD:</strong> ${safeText}</span>`;
+
                     document.getElementById('version').innerHTML = `<span><strong>Version:</strong> ${data.version.name_clean}</span>`;
 
                 } else {
@@ -131,7 +134,6 @@ This Website was developed by AKW42 for Blockattack. gmrrh is and will be a Copy
                 document.getElementById('status-message').innerText = 'Fehler beim Abrufen des Serverstatus.';
                 console.error('Fehler:', error);
             });
-
     </script>
 
     <footer>
