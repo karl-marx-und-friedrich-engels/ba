@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <script>
+        document.getElementById("copy-ip-btn").addEventListener("click", function () {
+            const serverIP = "blockattack.fun";
+            navigator.clipboard.writeText(serverIP).then(function () {
+                alert("Server IP wurde kopiert!\nDer Port für Bedrock ist 25515\nViel Spaß 😃🥰");
+            }).catch(function (err) {
+                console.error("Fehler beim Kopieren der IP: ", err);
+            });
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockattack - Team</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
+</head>
+
+<body>
+    <header
+        style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #333;">
+        <nav>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li>
+                    <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #fff;">
+                        <img src="/favicon.ico" alt="Blockattack Logo"
+                            style="width: 32px; height: 32px; margin-right: 8px;">
+                        <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
+                    </a>
+                </li>
+                </li>
+                <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server
+                        Info</a></li>
+                <li><a href="/news.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Neuigkeiten</a></li>
+            </ul>
+        </nav>
+        <div>
+            <button id="copy-ip-btn"
+                style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;">
+                Server IP kopieren
+            </button>
+        </div>
+    </header>
+
+    <section id="team">
+        <h1 style="text-align: center; color: #00d8ff; margin-bottom: 40px;">Lerne das Blockattack Team kennen</h1>
+
+        <div id="team-members">
+            <div class="team-member">
+                <img src="/drmifo.jpg" alt="Dr. Mifo">
+                <h3>Dr. Mifo</h3>
+                <p>Owner</p>
+                <p>Owner des Blockattack Minecraft Servers.</p>
+            </div>
+            <!--
+            <div class="team-member">
+                <img src="/very.jpg" alt="VeryUmbrella">
+                <h3>VeryUmbrella</h3>
+                <p>Leitung</p>
+                <p>Aktuelle Leitung des Servers (alte Leitung war gmrrh).</p>
+            </div>
+            -->
+            <div class="team-member">
+                <img src="/kraftwerk.jpg" alt="Kraftwerk">
+                <h3>AtomKraftwerk42</h3>
+                <p>Leitung</p>
+                <p>Teil der Leitung.</p>
+            </div>
+            <!-- entfernt auf anfrage von very
+            <div class="team-member">
+                <img src="/whitecrafter.jpg" alt="Whitecrafter44">
+                <h3>Whitecraft44</h3>
+                <p>Supporter</p>
+                <p>Ein Supporter.</p>
+            </div> -->
+        </div>
+        <br><br><br><br><br><br>
+
+    </section>
+
+    <footer>
+        <p>&copy; BlockAttack 2025</p>
+        <p>Gehostet auf <a href="https://mine-server.org" target="_blank"
+                style="color: inherit; text-decoration: inherit;">mine-server.org</a></p>
+        <p>Website von <a href="https://errexe.xyz" target="_blank"
+                style="color: inherit; text-decoration: inherit;">AKW42</a></p>
+        <br>
+        <a href="/privacy.html" style="display: inline;">Privacy</a>
+        <p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
+    </footer>
+</body>
+
+</html>

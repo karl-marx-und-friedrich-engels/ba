@@ -1,0 +1,233 @@
+<!--
+
+
+Copyright 2025 TheErrorExe
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-->
+
+<!--
+
+This Website was developed by TheErrorExe for Blockattack. TheErrorExe is and will be a Copyright Holder of this Software.
+
+-->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockattack - Minecraft Server</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
+</head>
+
+<body>
+    <header
+        style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #333;">
+        <nav>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li>
+                    <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #fff;">
+                        <img src="/favicon.ico" alt="Blockattack Logo"
+                            style="width: 32px; height: 32px; margin-right: 8px;">
+                        <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
+                    </a>
+                </li>
+                </li>
+                <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server
+                        Info</a></li>
+                <li><a href="/news.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Neuigkeiten</a></li>
+            </ul>
+        </nav>
+        <div>
+            <button id="copy-ip-btn"
+                style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;">
+                Server IP kopieren
+            </button>
+        </div>
+    </header>
+
+
+    <section id="home">
+        <h1>Willkommen auf Blockattack</h1>
+        <p>Der beste Minecraft Server von Dr. Mifo!</p>
+        <p>Verbinde dich jetzt: <strong>blockattack.fun</strong></p>
+        <p><em>Jetzt die neuesten Features wie das Claimen von Gebieten ausprobieren!</em></p>
+    </section>
+</main>
+
+</section>
+    <section id="server-status">
+        <h2>Server Status</h2>
+        <div id="status-message">Lade Serverstatus...</div>
+        <div id="server-info" style="display:none;">
+            <p id="players-online"><span></span></p>
+            <p id="motd"><span></span></p>
+            <p id="version"><span></span></p>
+        </div>
+        <div id="loading-spinner" style="display:block;">
+            <span class="loader"></span> Server wird überprüft...
+        </div>
+    </section>
+    <section id="features">
+        <h2>Warum Blockattack?</h2>
+        <table style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <th>
+                    <div class="card" data-feature="Gebietsclaiming">
+                        <img src="/image1.jpg" alt="Feature 1">
+                        <h3>Gebietsclaiming</h3>
+                        <p>Schütze dein Land vor anderen Spielern und baue es aus.</p>
+                    </div>
+                </th>
+                <th>
+                    <div class="card" data-feature="PVP-Kämpfe">
+                        <img src="/image2.jpg" alt="Feature 2">
+                        <h3>PVP-Kämpfe</h3>
+                        <p>Tritt in spannenden Kämpfen gegen andere Spieler an!</p>
+                    </div>
+                </th>
+                <th>
+                    <div class="card" data-feature="Events">
+                        <img src="/image3.jpg" alt="Feature 3">
+                        <h3>Events</h3>
+                        <p>Erlebe regelmäßige Events und spannende Abenteuer.</p>
+                    </div>
+                </th>
+            </tr>
+        </table>
+    </section>
+
+
+<section id="discord-section" style="margin-top: 50px;">
+    <h2>Discord-Server</h2>
+    <iframe src="https://discord.com/widget?id=1220023443391643830&theme=dark" width="350" height="500"
+        allowtransparency="true" frameborder="0"></iframe>
+    <br>
+    <a href="https://discord.gg/ARDHyKxtpH"
+        style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; text-align: center;">
+        Trete dem Discord Server bei
+    </a>
+</section>
+
+
+    <section id="about-owner">
+        <h2>Über den Owner: Dr. Mifo</h2>
+        <div class="owner-info">
+            <img src="drmifo.jpg" alt="Dr. Mifo" class="owner-image">
+            <p style="display: inline">Servus, ich stelle mich mal kurz vor und zwar bin ich der Dr.Mifo aka Jayden.
+                Meine Hobbys/was ich gerne mache sind Youtube Videos drehen, Jugendfeuerwehr(JFW),Fahrrad fahren ,Mit
+                Freunden irgend was unternehmen und noch vieles mehr. Mein Größter Wunsch auf Youtube ist irgendwann mal
+                die 1 Mio. Abos zu schaffen. Ich aktzeptiere alle die auf meinen Kanal sind bzw. im Chat sind. Wenn ihr
+                mir helfen wollt mein Traum zu Verwirklichen dann lasst gerne ein Abo da: </p><a style="display: inline"
+                href="https://www.youtube.com/@DrMifo">Dr. Mifo auf YouTube</a>
+        </div>
+    </section>
+
+    <script>
+        const serverAddress = 'blockattack.fun';
+
+        const apiUrl = `https://api.mcstatus.io/v2/status/java/${serverAddress}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const statusMessageElement = document.getElementById('status-message');
+                const serverInfoElement = document.getElementById('server-info');
+                const loadingSpinner = document.getElementById('loading-spinner');
+
+                loadingSpinner.style.display = 'none';
+                serverInfoElement.style.display = 'block';
+
+                if (data.online) {
+                    statusMessageElement.innerText = 'Server ist Online!';
+                    statusMessageElement.classList.remove("offline");
+                    statusMessageElement.classList.add("online");
+
+                    document.getElementById('players-online').innerHTML = `<span><strong>Spielerzahl:</strong> ${data.players.online} / ${data.players.max}</span>`;
+                    document.getElementById('motd').innerHTML = `<span><strong>MOTD:</strong> ${data.motd.html}</span>`;
+                    document.getElementById('version').innerHTML = `<span><strong>Version:</strong> ${data.version.name_clean}</span>`;
+
+                } else {
+                    statusMessageElement.innerText = 'Server ist Offline!';
+                    statusMessageElement.classList.remove("online");
+                    statusMessageElement.classList.add("offline");
+
+                    document.getElementById('host').innerHTML = `<span>${data.ip_address}</span>`;
+                }
+            })
+            .catch(error => {
+                document.getElementById('status-message').innerText = 'Fehler beim Abrufen des Serverstatus.';
+                console.error('Fehler:', error);
+            });
+
+    </script>
+
+    <section id="home" style="display: flex; justify-content: center; align-items: center; text-align: center;">
+        <div>
+            <h2>Das Server Team</h2>
+            <a href="/team.html"
+                style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; text-align: center;">
+                Lerne das Team kennen
+            </a>
+        </div>
+    </section>
+
+    <section id="home" style="text-align: center;">
+        <h2>Regelwerk:</h2>
+        <iframe
+            src="https://docs.google.com/document/d/e/2PACX-1vRjeS7oBU-82XRG8_Y9ljyabfJZYdtK5DYc98NktlVFXRph9iRMukgSvMkd1Kx5Hhy5g4vXRdnjN6Gv/pub?embedded=true"
+            style="border: none; width: 100%; height: 600px; max-width: 100%; margin-left: auto; margin-right: auto;">
+        </iframe>
+    </section>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <footer>
+        <p>&copy; BlockAttack 2025</p>
+        <p>Gehostet auf <a href="https://mine-server.org" target="_blank"
+                style="color: inherit; text-decoration: inherit;">mine-server.org</a></p>
+        <p>Website von <a href="https://errexe.xyz" target="_blank"
+                style="color: inherit; text-decoration: inherit;">TheErrorExe</a></p>
+        <br>
+        <a href="/privacy.html" style="display: inline;">Privacy</a>
+        <p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
+    </footer>
+    <script>
+        document.getElementById("copy-ip-btn").addEventListener("click", function () {
+            const serverIP = "blockattack.fun";
+            navigator.clipboard.writeText(serverIP).then(function () {
+                alert("Server IP wurde kopiert!\nDer Port für Bedrock ist 25515\nViel Spaß 😃🥰");
+            }).catch(function (err) {
+                console.error("Fehler beim Kopieren der IP: ", err);
+            });
+        });
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const featureName = card.getAttribute('data-feature');
+                switch (featureName) {
+                    case "Gebietsclaiming":
+                        alert("Claime ganz einfach ein Gebiet mit /f claim und baue dein eigenes Land.");
+                        break;
+                    case "PVP-Kämpfe":
+                        alert("Mach Kämpfe gegen andere Spieler des Blockattack Servers!");
+                        break;
+                    case "Events":
+                        alert("Beteilige dich bei Events!");
+                        break;
+                    default:
+                        alert("Feature nicht gefunden.");
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
