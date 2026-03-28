@@ -1,1 +1,150 @@
-<!-- Copyright 2025 AKW42 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. --> <!-- This Website was developed by AKW42 for Blockattack. gmrrh is and will be a Copyright Holder of this Software. --> <!DOCTYPE html> <html lang="de"> <head> <script> document.getElementById("copy-ip-btn").addEventListener("click", function () { const serverIP = "blockattack.fun"; navigator.clipboard.writeText(serverIP).then(function () { alert("Server IP wurde kopiert!\nDer Port für Bedrock ist 25515\nViel Spaß"); }).catch(function (err) { console.error("Fehler beim Kopieren der IP: ", err); }); }); </script> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Server Info</title> <link rel="stylesheet" href="/static/css/style.css"> </head> <body> <header style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #333;"> <nav> <ul style="list-style: none; display: flex; margin: 0; padding: 0;"> <li> <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #fff;"> <img src="/favicon.ico" alt="Blockattack Logo" style="width: 32px; height: 32px; margin-right: 8px;"> <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span> </a> </li> </li> <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server Info</a></li> <li><a href="/news.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Neuigkeiten</a></li> </ul> </nav> <div> <button id="copy-ip-btn" style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;"> Server IP kopieren </button> </div> </header> <section id="server"> <h2>Server Info</h2> <p>IP: <strong>blockattack.fun</strong></p> <p>Version: 1.21.8</p> <p>Besondere Features:</p> <ul> <li>Gebietsclaiming</li> <li>Spannende PvP-Kämpfe</li> <li>Events und regelmäßige Updates</li> </ul> </section> <section> <script> function credits() { window.location.href = "/static/credits.txt"; } </script> <button style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;" onclick="credits()">Website Credits</a> </section> <section id="server-status"> <h2>Server Status</h2> <div id="status-message">Lade Serverstatus...</div> <div id="server-info" style="display:none;"> <p id="players-online"><span></span></p> <p id="motd"><span></span></p> <p id="version"><span></span></p> </div> <div id="loading-spinner" style="display:block;"> <span class="loader"></span> Server wird überprüft... </div> </section> <script> const serverAddress = 'blockattack.fun'; const apiUrl = https://api.mcstatus.io/v2/status/java/${serverAddress}; fetch(apiUrl) .then(response => response.json()) .then(data => { const statusMessageElement = document.getElementById('status-message'); const serverInfoElement = document.getElementById('server-info'); const loadingSpinner = document.getElementById('loading-spinner'); loadingSpinner.style.display = 'none'; serverInfoElement.style.display = 'block'; if (data.online) { statusMessageElement.innerText = 'Server ist Online!'; statusMessageElement.classList.remove("offline"); statusMessageElement.classList.add("online"); document.getElementById('players-online').innerHTML = <span><strong>Spielerzahl:</strong> ${data.players.online} / ${data.players.max}</span>; document.getElementById('motd').innerHTML = <span><strong>MOTD:</strong> ${data.motd.html}</span>; document.getElementById('version').innerHTML = <span><strong>Version:</strong> ${data.version.name_clean}</span>; } else { statusMessageElement.innerText = 'Server ist Offline!'; statusMessageElement.classList.remove("online"); statusMessageElement.classList.add("offline"); document.getElementById('host').innerHTML = <span>${data.ip_address}</span>; } }) .catch(error => { document.getElementById('status-message').innerText = 'Fehler beim Abrufen des Serverstatus.'; console.error('Fehler:', error); }); </script> <footer> <p>&copy; BlockAttack 2025</p> <p>Gehostet auf <a href="https://mine-server.org" target="_blank" style="color: inherit; text-decoration: inherit;">mine-server.org</a></p> <p>Website von <a href="https://akw.xyz" target="_blank" style="color: inherit; text-decoration: inherit;">AKW42</a></p> <br> <a href="/privacy.html" style="display: inline;">Privacy</a> <p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a> </footer> </body> </html>
+<!--
+
+
+Copyright 2025 AKW42
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-->
+
+<!--
+
+This Website was developed by AKW42 for Blockattack. gmrrh is and will be a Copyright Holder of this Software.
+
+-->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <script>
+        document.getElementById("copy-ip-btn").addEventListener("click", function () {
+            const serverIP = "blockattack.fun";
+            navigator.clipboard.writeText(serverIP).then(function () {
+                alert("Server IP wurde kopiert!\nDer Port für Bedrock ist 25515\nViel Spaß 😃🥰");
+                alert("Server IP wurde kopiert!\nDer Port für Bedrock ist 25515\nViel Spaß");
+            }).catch(function (err) {
+                console.error("Fehler beim Kopieren der IP: ", err);
+            });
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Info</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <header
+        style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #333;">
+        <nav>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li>
+                    <a href="/" style="display: flex; align-items: center; text-decoration: none; color: #fff;">
+                        <img src="/favicon.ico" alt="Blockattack Logo"
+                            style="width: 32px; height: 32px; margin-right: 8px;">
+                        <span style="font-size: 1.5rem; font-weight: bold;" class="textcolorgradient">Blockattack</span>
+                    </a>
+                </li>
+                </li>
+                <li><a href="/server.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Server
+                        Info</a></li>
+                <li><a href="/news.html" style="text-decoration: none; color: #fff; margin-left: 20px;">Neuigkeiten</a></li>
+            </ul>
+        </nav>
+        <div>
+            <button id="copy-ip-btn"
+                style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;">
+                Server IP kopieren
+            </button>
+        </div>
+    </header>
+
+
+    <section id="server">
+        <h2>Server Info</h2>
+        <p>IP: <strong>blockattack.fun</strong></p>
+        <p>Version: 1.21.8</p>
+        <p>Besondere Features:</p>
+        <ul>
+            <li>Gebietsclaiming</li>
+            <li>Spannende PvP-Kämpfe</li>
+            <li>Events und regelmäßige Updates</li>
+        </ul>
+    </section>
+    <section>
+        <script>
+    function credits() {
+        window.location.href = "/static/credits.txt";
+    }
+        </script>
+        <button style="background-color: #007bff; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 1rem;" onclick="credits()">Website Credits</a>
+    </section>
+    <section id="server-status">
+        <h2>Server Status</h2>
+        <div id="status-message">Lade Serverstatus...</div>
+        <div id="server-info" style="display:none;">
+            <p id="players-online"><span></span></p>
+            <p id="motd"><span></span></p>
+            <p id="version"><span></span></p>
+        </div>
+        <div id="loading-spinner" style="display:block;">
+            <span class="loader"></span> Server wird überprüft...
+        </div>
+    </section>
+
+    <script>
+        const serverAddress = 'blockattack.fun';
+
+        const apiUrl = `https://api.mcstatus.io/v2/status/java/${serverAddress}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const statusMessageElement = document.getElementById('status-message');
+                const serverInfoElement = document.getElementById('server-info');
+                const loadingSpinner = document.getElementById('loading-spinner');
+
+                loadingSpinner.style.display = 'none';
+                serverInfoElement.style.display = 'block';
+
+                if (data.online) {
+                    statusMessageElement.innerText = 'Server ist Online!';
+                    statusMessageElement.classList.remove("offline");
+                    statusMessageElement.classList.add("online");
+
+                    document.getElementById('players-online').innerHTML = `<span><strong>Spielerzahl:</strong> ${data.players.online} / ${data.players.max}</span>`;
+                    document.getElementById('motd').innerHTML = `<span><strong>MOTD:</strong> ${data.motd.html}</span>`;
+                    document.getElementById('version').innerHTML = `<span><strong>Version:</strong> ${data.version.name_clean}</span>`;
+
+                } else {
+                    statusMessageElement.innerText = 'Server ist Offline!';
+                    statusMessageElement.classList.remove("online");
+                    statusMessageElement.classList.add("offline");
+
+                    document.getElementById('host').innerHTML = `<span>${data.ip_address}</span>`;
+                }
+            })
+            .catch(error => {
+                document.getElementById('status-message').innerText = 'Fehler beim Abrufen des Serverstatus.';
+                console.error('Fehler:', error);
+            });
+
+    </script>
+
+    <footer>
+        <p>&copy; BlockAttack 2025</p>
+        <p>Gehostet auf <a href="https://mine-server.org" target="_blank"
+                style="color: inherit; text-decoration: inherit;">mine-server.org</a></p>
+        <p>Website von <a href="https://akw.xyz" target="_blank"
+                style="color: inherit; text-decoration: inherit;">AKW42</a></p>
+        <br>
+        <a href="/privacy.html" style="display: inline;">Privacy</a>
+        <p style="display: inline;"> | </p><a href="/terms.html" style="display: inline;">Terms of Service</a>
+    </footer>
+</body>
+
+</html>
