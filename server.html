@@ -116,7 +116,7 @@ This Website was developed by AKW42 for Blockattack. gmrrh is and will be a Copy
                     statusMessageElement.classList.add("online");
 
                     document.getElementById('players-online').innerHTML = `<span><strong>Spielerzahl:</strong> ${data.players.online} / ${data.players.max}</span>`;
-                    document.getElementById('motd').innerHTML = `<span><strong>MOTD:</strong> ${data.motd.html}</span>`;
+                    document.getElementById('motd').innerHTML = `<span><strong>MOTD:</strong> ${data.motd.clean}</span>`;
                     document.getElementById('version').innerHTML = `<span><strong>Version:</strong> ${data.version.name_clean}</span>`;
 
                 } else {
